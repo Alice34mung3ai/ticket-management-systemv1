@@ -99,6 +99,7 @@ The system follows a microservices-oriented architecture with clear separation b
 The backend utilizes a layered architecture pattern ensuring separation of concerns and maintainability:
 
 #### API Layer
+
 - RESTful endpoints following OpenAPI 3.0 specifications
 - Comprehensive request validation and serialization
 - Centralized error handling middleware

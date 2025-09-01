@@ -17,14 +17,6 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, requiredRole }) =
   if (!user) {
     return <Navigate to="/login" replace />;
   }
-  // If a requiredRole is specified, check if the user has that role
-  if (requiredRole && user !== requiredRole) {
-    return <Navigate to="/unauthorized" replace />;
-  }
-
- 
-
-  // If authenticated (and role matches if required), render children
   return <>{children}</>;
 }
 

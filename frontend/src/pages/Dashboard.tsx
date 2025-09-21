@@ -1,24 +1,30 @@
+// Dashboard.tsx
 import { useAuth } from "../context/AuthContext";
+import Layout from "../App/Layout";
 
 function Dashboard() {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-      <div className="bg-white shadow-md rounded-xl p-6 w-full max-w-md text-center">
-        <h1 className="text-3xl font-bold mb-4">Welcome, {user} 🎉</h1>
-        <p className="mb-6 text-gray-600">
-          This is your dashboard. You are now logged in.
-        </p>
-
-        <button
-          onClick={logout}
-          className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
-        >
-          Logout
-        </button>
+    <Layout>
+      <div className="card">
+        <h2>Welcome, {user}!</h2>
+        <p>This is your dashboard. You can view your tickets, analytics, and more.</p>
+        <p>Select different roles from the top right to see role-specific menu items.</p>
       </div>
-    </div>
+      
+      <div className="card">
+        <h2>Recent Activity</h2>
+        <p>No recent activity to display.</p>
+      </div>
+      
+      <div className="card">
+        <h2>Quick Stats</h2>
+        <p>Open Tickets: 0</p>
+        <p>Resolved Tickets: 0</p>
+        <p>Pending Tickets: 0</p>
+      </div>
+    </Layout>
   );
 }
 
